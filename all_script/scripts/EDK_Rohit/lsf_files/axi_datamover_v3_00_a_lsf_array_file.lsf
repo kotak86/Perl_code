@@ -1,0 +1,13 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_datamover_v3_00_a_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_datamover_v3_00_a/virtex7/axi_dm_mm2s_full_max_pkt_21201_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_datamover_v3_00_a/virtex6l/axi_datamover_mm2s_s2mm_lite_12327_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_datamover_v3_00_a/kintex7/axi_dm_s2mm_full_max_pkt_17336_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_datamover_v3_00_a/aspartan6/axi_datamover_mm2s_bubble_11135_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_datamover_v3_00_a/virtex6/axi_datamover_mm2s_s2mm_full_96635_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_datamover_v3_00_a/spartan6/axi_datamover_s2mm_bubble_59984_0/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX];

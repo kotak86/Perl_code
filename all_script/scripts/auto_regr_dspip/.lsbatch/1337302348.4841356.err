@@ -1,0 +1,17 @@
+999999 LSFUSER= ankitko 
+"my" variable $tclfile masks earlier declaration in same scope at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 2494.
+"my" variable $tclfile masks earlier declaration in same scope at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 4357.
+"my" variable $testcase masks earlier declaration in same scope at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 7348.
+Unrecognized escape \s passed through at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 7976.
+Unrecognized escape \s passed through at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 7977.
+Use of uninitialized value in pattern match (m//) at /proj/xtools/svauto2/libs/General/v1_7.pm line 267.
+Use of uninitialized value in pattern match (m//) at /proj/xtools/svauto2/libs/General/v1_7.pm line 267.
+Use of uninitialized value in concatenation (.) or string at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3150.
+Use of uninitialized value in string ne at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3171.
+Use of uninitialized value in concatenation (.) or string at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3175.
+Use of uninitialized value in -e at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3177.
+Use of uninitialized value in concatenation (.) or string at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3150.
+Use of uninitialized value in string ne at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3171.
+Use of uninitialized value in concatenation (.) or string at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3175.
+Use of uninitialized value in -e at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 3177.
+Use of uninitialized value in numeric eq (==) at /proj/xtools/svauto2/flows/xlnxIP/prod/newSpool.pl line 126.

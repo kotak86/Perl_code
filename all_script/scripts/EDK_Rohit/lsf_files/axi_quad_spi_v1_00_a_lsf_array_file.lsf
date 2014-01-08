@@ -1,0 +1,38 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_quad_spi_v1_00_a_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex7/qspi_standard_mode_068794_16/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex7/qspi_standard_mode_068794_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex7/qspi_standard_mode_068794_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex7/qspi_numonyx_memory_152679_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/qspartan6/qspi_standard_mode_068794_25/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex6l/qspi_standard_mode_068794_17/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex6l/qspi_standard_mode_068794_26/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex6l/qspi_standard_mode_068794_10/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/zynq/qspi_winbond_memory_189047_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/zynq/qspi_winbond_memory_189047_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/zynq/qspi_standard_mode_068794_13/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/qvirtex6/qspi_standard_mode_068794_14/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/artix7/qspi_standard_mode_068794_18/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/artix7/qspi_standard_mode_068794_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/artix7/qspi_standard_mode_068794_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/qspartan6l/qspi_standard_mode_068794_15/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/qspartan6l/qspi_standard_mode_068794_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/qspartan6l/qspi_standard_mode_068794_19/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/kintex7/qspi_standard_mode_068794_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/kintex7/qspi_standard_mode_068794_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/kintex7/qspi_numonyx_memory_152679_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/aspartan6/qspi_standard_mode_068794_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/aspartan6/qspi_standard_mode_068794_8/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/aspartan6/qspi_standard_mode_068794_23/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex6/qspi_standard_mode_068794_9/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/virtex6/qspi_standard_mode_068794_24/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/spartan6/qspi_standard_mode_068794_11/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/spartan6/qspi_standard_mode_068794_21/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/spartan6/qspi_standard_mode_068794_20/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/spartan6/qspi_standard_mode_068794_22/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_quad_spi_v1_00_a/spartan6l/qspi_standard_mode_068794_12/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

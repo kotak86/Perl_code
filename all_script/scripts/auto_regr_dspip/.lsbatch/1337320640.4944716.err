@@ -1,0 +1,9 @@
+# Attempting stack trace sig 11
+# Signal caught: signo [11]
+unable to alloc 504 bytes
+# do_stack_trace called again before completion!
+# With signal: signo [6]
+** Fatal: (SIGABRT) Bad pointer access. Closing vsimk.
+** Fatal: vsimk is exiting with code 206.
+(Exit codes are defined in the ModelSim messages appendix
+of the ModelSim User's Manual.)

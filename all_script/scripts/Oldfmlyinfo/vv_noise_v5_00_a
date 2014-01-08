@@ -1,0 +1,3 @@
+  variable $my_family = [RAND:RANGE:virtex7, kintex7, virtex6, spartan6, artix7 :1]{5}
+  variable $my_family = [RAND:RANGE:virtex7, kintex7, virtex6, spartan6, artix7 :1]{3}
+  variable $my_family = [RAND:RANGE:artix7, virtex7, kintex7, virtex6, spartan6 :1]{3}

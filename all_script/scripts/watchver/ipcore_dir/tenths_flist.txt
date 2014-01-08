@@ -1,0 +1,13 @@
+# Output products list for <tenths>
+tenths.gise
+tenths.ise
+tenths.ngc
+tenths.v
+tenths.veo
+tenths.vhd
+tenths.vho
+tenths.xco
+tenths.xise
+tenths_c_counter_binary_v8_0_xst_1.ngc_xst.xrpt
+tenths_flist.txt
+tenths_xmdf.tcl

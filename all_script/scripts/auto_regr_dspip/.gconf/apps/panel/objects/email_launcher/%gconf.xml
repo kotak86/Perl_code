@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="launcher_location" mtime="1331833783" type="string">
+                <stringvalue>hammer-004c620ea9.desktop</stringvalue>
+        </entry>
+</gconf>

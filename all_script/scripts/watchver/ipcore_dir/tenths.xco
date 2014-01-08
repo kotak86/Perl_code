@@ -1,0 +1,64 @@
+##############################################################
+#
+# Xilinx Core Generator version 11.1
+# Date: Tue Nov 18 19:58:21 2008
+#
+##############################################################
+#
+#  This file contains the customisation parameters for a
+#  Xilinx CORE Generator IP GUI. It is strongly recommended
+#  that you do not manually alter this file as it may cause
+#  unexpected and unsupported behavior.
+#
+##############################################################
+#
+# BEGIN Project Options
+SET addpads = False
+SET asysymbol = False
+SET busformat = BusFormatAngleBracketNotRipped
+SET createndf = False
+SET designentry = VHDL
+SET device = xc3s100e
+SET devicefamily = spartan3e
+SET flowvendor = Foundation_iSE
+SET formalverification = False
+SET foundationsym = False
+SET implementationfiletype = Ngc
+SET package = vq100
+SET removerpms = False
+SET simulationfiles = Behavioral
+SET speedgrade = -5
+SET verilogsim = True
+SET vhdlsim = True
+# END Project Options
+# BEGIN Select
+SELECT Binary_Counter family Xilinx,_Inc. 8.0
+# END Select
+# BEGIN Parameters
+CSET aclr=false
+CSET ainit=true
+CSET ainit_value=0
+CSET aset=false
+CSET async_threshold_output=true
+CSET ce=true
+CSET component_name=tenths
+CSET count_mode=UP
+CSET cycle_early_threshold_output=false
+CSET final_count_value=9
+CSET increment_value=1
+CSET load=false
+CSET load_ce_priority=CE_Overrides_Load
+CSET output_width=4
+CSET restrict_count=true
+CSET sclr=false
+CSET sinit=false
+CSET sinit_value=0
+CSET sset=false
+CSET sync_ce_priority=Sync_Overrides_CE
+CSET sync_threshold_output=false
+CSET syncctrlpriority=Reset_Overrides_Set
+CSET threshold_value=9
+# END Parameters
+GENERATE
+# CRC: b1417f74
+

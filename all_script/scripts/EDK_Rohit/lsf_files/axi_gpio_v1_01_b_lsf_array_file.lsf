@@ -1,0 +1,58 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_gpio_v1_01_b_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex7/gpio_new_dev_32769_15/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex7/gpio_new_dev_32769_10/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex7/gpio_4_cov13175_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex7/gpio_new_dev_32769_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex7/gpio_new_dev_32769_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/qspartan6/gpio_4_cov13175_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/qspartan6/gpio_default_26754_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6l/gpio_max_33242_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6l/gpio_min_is_dual_175064_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6l/gpio_rand_is_dual_148738_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6l/gpio_default_26754_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6l/gpio_rand_is_dual_148738_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/zynq/gpio_new_dev_32769_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/zynq/gpio_new_dev_32769_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/zynq/gpio_new_dev_32769_12/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/zynq/gpio_4_cov13175_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/zynq/gpio_new_dev_32769_17/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/zynq/gpio_min_is_dual_175064_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/artix7/gpio_rand_is_dual_057871_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/artix7/gpio_new_dev_32769_18/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/artix7/gpio_new_dev_32769_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/artix7/gpio_rand_is_dual_057871_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/artix7/gpio_new_dev_32769_8/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/artix7/gpio_new_dev_32769_13/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/artix7/gpio_max_33242_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7l/gpio_new_dev_32769_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7l/gpio_new_dev_32769_19/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7l/gpio_new_dev_32769_9/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7l/gpio_new_dev_32769_14/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/qspartan6l/gpio_default_26754_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/qspartan6l/gpio_min_is_dual_090669_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7/gpio_new_dev_32769_16/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7/gpio_new_dev_32769_11/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7/gpio_rand_is_dual_148738_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7/gpio_new_dev_32769_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/kintex7/gpio_new_dev_32769_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/aspartan6/gpio_rand_is_dual_057871_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/aspartan6/gpio_default_26754_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/aspartan6/gpio_4_cov13175_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6/gpio_4_cov13175_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6/gpio_4_cov13175_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6/gpio_default_26754_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/virtex6/gpio_max_33242_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6/gpio_4_cov13175_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6/gpio_default_26754_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6/gpio_rand_is_dual_148738_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6l/gpio_min_is_dual_090669_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6l/gpio_default_26754_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6l/gpio_max_33242_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6l/gpio_rand_is_dual_057871_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_gpio_v1_01_b/spartan6l/gpio_4_cov13175_5/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

@@ -1,0 +1,43 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_sysace_v1_01_a_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_k7_78330_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v6_90164_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v6_90164_10/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v7_44568_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_k7_78330_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_k7_78330_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v7_44568_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v6_90164_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_k7_78330_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v7_44568_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v7_44568_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/virtex7/axi_sys_rand_v6_90164_11/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/zynq/axi_sys_rand_v6_90164_12/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/zynq/axi_sys_rand_v6_90164_13/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/zynq/axi_sys_rand_v6_90164_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/zynq/axi_sys_rand_v6_90164_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/artix7/axi_sys_rand_v6_90164_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/artix7/axi_sys_rand_v6_90164_14/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/artix7/axi_sys_rand_v6_90164_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/artix7/axi_sys_rand_v6_90164_15/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v6_90164_9/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_k7_78330_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_k7_78330_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v6_90164_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v6_90164_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v7_44568_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_k7_78330_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v7_44568_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v6_90164_8/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v7_44568_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_v7_44568_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/kintex7/axi_sys_rand_k7_78330_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/spartan6/axi_sys_rand_s6_33558_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/spartan6/axi_sys_rand_s6_33558_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/spartan6/axi_sys_rand_s6_33558_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_sysace_v1_01_a/spartan6/axi_sys_rand_s6_33558_3/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

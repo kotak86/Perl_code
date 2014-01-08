@@ -1,0 +1,42 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_intc_v1_01_a_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex7/intc_ivr33929_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex7/intc_mask2_level80965_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex7/intc_random_level40505_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/qspartan6/intc_neagtive_test_level85134_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/qspartan6/intc_mer_test_level33027_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/qspartan6/intc_mask2_edge83520_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/qspartan6/intc_software_edge84213_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex6l/intc_reg_read_write22275_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex6l/intc_random_edge23473_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex6l/intc_hw_single_level_edge92471_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/zynq/intc_async_hard_reset79859_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/zynq/intc_software_level67542_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/zynq/intc_reg_rule19376_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/zynq/intc_random_edge23473_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/artix7/intc_multiple_hardware_level74544_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/artix7/intc_multiple_hardware_level74544_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/artix7/intc_neagtive_test_edge59260_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/qspartan6l/intc_mask2_edge83520_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/kintex7/intc_multiple_hardware_edge76781_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/kintex7/intc_hw_single_level_edge92471_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/aspartan6/intc_software_edge84213_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/aspartan6/intc_random_level40505_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/aspartan6/intc_axi_timeout75053_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/aspartan6/intc_hw_single_level24914_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex6/intc_por12933_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/virtex6/intc_hw_single_level24914_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_neagtive_test_level85134_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_mer_test_edge48908_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_mask2_level80965_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_neagtive_test_edge59260_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_mer_test_edge48908_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_software_level67542_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_hie92323_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6/intc_mer_test_level33027_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_intc_v1_01_a/spartan6l/intc_multiple_hardware_edge76781_0/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

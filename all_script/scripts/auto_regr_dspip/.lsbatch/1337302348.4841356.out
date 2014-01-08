@@ -1,0 +1,186 @@
+lsf_validate /tmp at 23% used
+lsf_validate /var/tmp at 23% used
+Using Arizona API version v1_4
+Using Arizona General library version v1_7
+Using Arizona CCoredata library version v1_0
+#### Using dev_eoin of libs::Devices! ####
+Result dir - /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run 
+SIM_VENDOR , Simulation used,flow type - MTI :: functional ::edkIP 
+Result Directory:
+/proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run
+
+Reading config file: /proj/xtools/svauto2/SITE.cfg
+Reading command line config files and arguments...
+------------------------------------------------------------
+PARAMETER                       VALUE
+
+CADGROUP                      : cosv
+CADMAN_xilinx                 : 14.2_0517
+CADMAN_xilinx_pathtype        : tda
+DEBUG_MODE                    : 0
+FAMILY                        : qvirtex6
+FLOWPATH                      : /proj/xtools/svauto2/flows/xlnxIP/prod/newSpool.pl
+FLW_TYPE                      : edkIP
+IP_LIC_DIR_ROOT               : /somepath/
+NCDFLAG                       : 0
+REPOSITORYROOT                : /proj/xtcRepo/HEAD
+RESULTSROOT                   : /proj/xresults/arizona
+SIMULATION                    : functional
+SIM_VENDOR                    : MTI
+SITE                          : CO
+SPOOLER                       : /proj/spooler/current/P2
+USEABERU3                     : 0
+XCOMPLIBS                     : /proj/xbuilds/clibs
+rd                            : /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run
+testcasename                  : uartlite_fcs2_66944_14
+------------------------------------------------------------
+Reading config file: /proj/xtools/svauto2/SITE.cfg
+Reading config file: Final.cfg
+Reading command line config files and arguments...
+------------------------------------------------------------
+PARAMETER                       VALUE
+
+BFM_TYPE                      : OPB
+BM                            : BM_BOTH
+CADGROUP                      : cosv
+CADMAN_license                : coip
+CADMAN_modelsim               : 10.1a
+CADMAN_modelsim_pathtype      : default
+CADMAN_utools                 : HEAD
+CADMAN_xilinx                 : 14.2_0517
+CADMAN_xilinx_pathtype        : tda
+CG_C_MODEL                    : 0
+CHK_BGEN                      : 1
+CHK_NGEN                      : 1
+CLOCKS                        : AXI_Clk
+CORE_VENDOR                   : xlnx
+CORE_VERSION                  : 1.02.a
+COVERAGE                      : 0
+COVERAGE_COMPILE_OPTS         : bcestf
+CUST_PROD_TEST                : 0
+C_MODEL                       : 0
+DCR_BFM_VERSION               : DCR_TOOLKIT2X_070204
+DCR_TEST_HARNESS_VERSION      : dcr_test_harness_v1_00_a
+DEBUGLEVEL                    : 1
+DEBUG_MODE                    : 0
+DEMO_SIM_TYPE                 : license
+DEMO_SIM_VENDOR               : MTI
+DEMO_TB_LANG                  : vhdl
+DONTDIE                       : 0
+ENV_XILINXD_LICENSE_FILE      : 1800@efpga:2001@xcobuild116
+ENV_XIL_PAR_SS_DESIGN         : 1
+ERRDESC                       : ERROR:EDK - Vivado flow supports only 7-series and above architectures .  ERROR:EDK - platgen failed with errors!
+ERRFNAME                      : /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run/all.log
+ERRSTAGE                      : platgen
+FAILR                         : errorstring found in file
+FAMILY                        : qvirtex6
+FLOW                          : edkIP
+FLOWPATH                      : /proj/xtools/svauto2/flows/xlnxIP/prod/newSpool.pl
+FLW_TYPE                      : edkIP
+FUNCTIONAL_SIM                : 1
+FUNC_NCDFLAG                  : 0
+HDL_LANGUAGE                  : verilog
+IMPLEMENTATION                : 1
+IMPLEMENTED                   : implemented
+IMPLEMENT_TIME_LIMIT          : 18000
+INIT_SPOOLER                  : /proj/spooler/current/P2
+IP_LIC_DIR_ROOT               : /somepath/
+IP_TYPE                       : Networking
+ISIM_TIMELIMIT                : 14400
+IUS_TIMELIMIT                 : 14400
+LICENSE                       : random
+LICENSE_TYPE                  : bought
+LSFGRPID                      : AXI_UARTLITE_V1_02_A[1-36]
+LSF_FN                        : bsub  -E "/proj/xtools/cfs/lsf_validate.sh" -R "select[type==X86_64]"  -P ip_ipv_regressions -q medium -R "rusage[mem=3000]" -R "rusage[swesvverification=2:swemsimhdlsim=2:swemsimhdlmix=2]" -oo /proj/xtools/testRunner/logs/ankitko/%J_%I.txt -eo /proj/xtools/testRunner/logs/ankitko/%J_%I.err -E /proj/xtools/cfs/lsf_validate.sh -Lp ipreg_opt  -J axi_uartlite_uartlite_fcs2_66944_14_fsim
+LSF_OPTION                    : -P ip_ipv_regressions -q medium -R "rusage[mem=3000]" -R "rusage[swesvverification=2:swemsimhdlsim=2:swemsimhdlmix=2]" -oo /proj/xtools/testRunner/logs/ankitko/%J_%I.txt -eo /proj/xtools/testRunner/logs/ankitko/%J_%I.err -E /proj/xtools/cfs/lsf_validate.sh -Lp ipreg_opt
+LSF_TM                        : bsub  -E "/proj/xtools/cfs/lsf_validate.sh" -R "select[type==X86_64]"  -P ip_ipv_regressions -q medium -R "rusage[mem=3000]" -R "rusage[swesvverification=2:swemsimhdlsim=2:swemsimhdlmix=2]" -oo /proj/xtools/testRunner/logs/ankitko/%J_%I.txt -eo /proj/xtools/testRunner/logs/ankitko/%J_%I.err -E /proj/xtools/cfs/lsf_validate.sh -Lp ipreg_opt  -J axi_uartlite_uartlite_fcs2_66944_14_tsim
+MAX_NUM_FILES                 : 15000
+MAX_SIZE_FILES                : 1000000000
+MODULE                        : axi_uartlite
+MODULENAME                    : axi_uartlite_v1_02_a
+NCDFLAG                       : 0
+NCDOUT                        : 0
+NETLIST_SIM                   : 1
+NO_WAVEDUMP                   : 1
+NUMENDFLOWS                   : 1
+OPB_BFM_VERSION               : OPB_TOOLKIT2X_052401
+OPB_TEST_HARNESS_VERSION      : opb_test_harness_v1_00_a
+OS                            : lin64
+OVM_SPOOL                     : 0
+PACKING_FACTOR                : 1.0
+PARTLIST                      : DEFAULT
+PLATGEN_OPTION                : -intstyle vivado
+PLB_BFM_VERSION               : PLB_TOOLKIT4X_090902
+PLB_TEST_HARNESS_VERSION      : plb_test_harness_v1_00_a
+PRODUCTION_SIM_TYPE           : none
+PRODUCTION_SIM_VENDOR         : MTI
+PROJ_DIR                      : proj
+REFERENCE_CORE                : 0
+REPOSITORYROOT                : /proj/xtcRepo/HEAD
+RESOURCE_LIMIT                : slice
+RESULTSROOT                   : /proj/xresults/arizona/ankitko
+RODIN_FLOW                    : 1
+RODIN_RU_FORCE                : -force
+RTF_NCDOUT                    : 0
+RUNLIMIT_FAIL                 : 1
+RUNTIME                       : 00:00:25
+RUN_CHECKSYMBOLPINS           : 1
+RUN_POST_COREGEN_SCRIPT       : 1
+RUN_TIME_LIMIT                : 3600
+SANDBOX_ROOT                  : /proj/xtools/sandboxes/sandbox_default/env/Databases
+SDF_PATH                      : standard
+SIMULATION                    : functional
+SIMULATION_COVERAGE           : 0
+SIMULATOR                     : MTI
+SIM_ENV_TYPE                  : OVM
+SIM_TIME_LIMIT                : 604800
+SIM_TYPE                      : routed
+SIM_VENDOR                    : MTI
+SIM_WITH_SDF                  : 0
+SITE                          : CO
+SPOOLER                       : /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run
+SPY_RUN_MODE                  : batch
+STRUCTIP_ENABLE               : OFF
+STRUCTURAL_MODELS             : 0
+SUPER_TESTSUITE               : EDK
+SYNTHESIZER                   : Xst
+TESTSUITE                     : IP_2012.2_120517
+TEST_DEMO_TB                  : 0
+TFMPC_CHECK                   : 1
+TIMING_RES                    : ps
+TIMING_SIM                    : 1
+USEABERU3                     : 0
+USE_COMP_NAME                 : 0
+VCS_TIMELIMIT                 : 14400
+VLOG_SIM_VCSI                 : 0
+VSIM_TIMELIMIT                : 14400
+VSIM_TIME_RESOLUTION          : 1ps
+XCOMPLIBS                     : /proj/xbuilds/clibs
+XCOMPLIBS_ORG                 : /proj/xbuilds/clibs
+XCS_BRANCH                    : EDK_HEAD
+XIL32                         : 0
+XST_NCDOUT                    : 0
+XST_WARNING_LEVEL             : 1
+rd                            : /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run
+tc                            : /proj/xtcRepo/ipv/epdIP/vivado_staepd/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/input
+testcasename                  : uartlite_fcs2_66944_14
+------------------------------------------------------------
+Spooler location set to /proj/spooler/current/P2
+Corename set to axi_uartlite
+Coreversion set to 1.02.a
+Runtime set to 00:00:25
+LSF Group ID set to AXI_UARTLITE_V1_02_A[1-36]
+Testsuite and Super_Testsuite values are : IP_2012.2_120517 :: EDK
+Result Dir Path  - /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run
+Corename is axi_uartlite, Instance name is testinst, filename is sim_parameters.args
+
+
+Debug Level 1 : >>> Entering runScript()
+Script option -  
+Debug Level 1 : Command = ''
+Custom script cust_post_fsim .pl or .sh or .bat does not exist in /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run.
+Debug Level 1 : <<< Exiting runScript()
+Debug Level 1 : >>> Entering runScript()
+Script option -  
+Debug Level 1 : Command = ''
+

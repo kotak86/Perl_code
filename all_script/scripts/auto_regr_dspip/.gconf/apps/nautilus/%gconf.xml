@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="sound_state" mtime="1331833706" type="int" value="0">
+        </entry>
+        <entry name="preferences_version" mtime="1331833701" type="int" value="2">
+        </entry>
+</gconf>

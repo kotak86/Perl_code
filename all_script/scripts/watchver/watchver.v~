@@ -1,0 +1,8 @@
+`include "cnt60.v"
+`include "decode.v"
+`include "hex2led.v"
+`include "smallcntr.v"
+`include "statmach.v"
+`include "stopwatch.v"
+`include "tenths.v"
+`include "dcm1.v"

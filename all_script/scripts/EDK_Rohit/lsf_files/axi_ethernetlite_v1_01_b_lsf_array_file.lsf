@@ -1,0 +1,20 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_ethernetlite_v1_01_b_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/virtex7/eth_collision_36956_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/virtex6l/eth_ext_loopback_test_81017_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/artix7/eth_collision_36956_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/qspartan6l/eth_rx_test_66796_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/kintex7/eth_tx_test_41142_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/aspartan6/eth_collision_36956_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/virtex6/eth_collision_36956_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/virtex6/eth_tx_throughput_11337_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/virtex6/eth_regs_reset_90791_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/virtex6/eth_error_test_71723_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/spartan6/eth_int_loopback_test_95838_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/spartan6/eth_rx_throughput_76342_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_ethernetlite_v1_01_b/spartan6l/eth_mdio_test_72990_0/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]
