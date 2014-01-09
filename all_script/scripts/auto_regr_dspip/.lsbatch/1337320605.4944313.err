@@ -1,6 +1,0 @@
-# Attempting stack trace sig 11
-# Signal caught: signo [11]
-** Fatal: vsimk is exiting with code 9.
-(Exit codes are defined in the ModelSim messages appendix
-of the ModelSim User's Manual.)
-User defined signal 2

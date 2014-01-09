@@ -1,5 +1,0 @@
-#!/bin/csh
-
-
-perl /home/ankitko/auto_regr_dspip/sub_dspip.pl
-

@@ -1,4 +1,0 @@
-variable $family_force = [RAND:RANGE: virtex5, virtex6, virtex7, virtex7l, kintex7, kintex7l, artix7, zynq,azynq]{4}
-variable $family_force = [RAND:RANGE: virtex5, virtex6, virtex7, virtex7l, kintex7, kintex7l, artix7, zynq,azynq]{4}
-variable $family_force = [RAND:RANGE: virtex5, virtex6, virtex7, virtex7l, kintex7, kintex7l, artix7, zynq,azynq]{4}
-variable $family_force = [RAND:RANGE: virtex5, virtex6, virtex7, virtex7l, kintex7, kintex7l, artix7, zynq,azynq]{4}

@@ -1,5 +1,0 @@
-variable a_max = [($family_force)eq(virtex5)||($family_force)eq(virtex6)||($family_force)eq(virtex6l)||($family_force)eq(virtex7)||($family_force)eq(kintex7)||($family_force)eq(virtex7l)||($family_force)eq(kintex7l)?25:18]
-variable a_max = [($family_force)eq(virtex5)||($family_force)eq(virtex6)||($family_force)eq(virtex6l)||($family_force)eq(virtex7)||($family_force)eq(kintex7)||($family_force)eq(virtex7l)||($family_force)eq(kintex7l)?25:18]
-variable a_max = [($family_force)eq(virtex5)||($family_force)eq(virtex6)||($family_force)eq(virtex6l)||($family_force)eq(virtex7)||($family_force)eq(kintex7)||($family_force)eq(virtex7l)||($family_force)eq(kintex7l)?25:18]
-variable a_max = [($family_force)eq(virtex5)||($family_force)eq(virtex6)||($family_force)eq(virtex6l)||($family_force)eq(virtex7)||($family_force)eq(kintex7)||($family_force)eq(virtex7l)||($family_force)eq(kintex7l)?25:18]
-variable family_force = [rand:range:virtex6,spartan6,virtex7,virtex7l,kintex7,kintex7l,artix7,artix7l,artix7l,aartix7,aartix7]

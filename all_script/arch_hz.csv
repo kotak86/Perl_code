@@ -1,5 +1,0 @@
-name, clb_x, L1_type, LUT_1, L1_delay, L2_type, LUT_2, L2_delay, L3_type, LUT_3, L3_delay, total_ipins, total_opins, ipin_x, opin_x, lint_delay, gint_delay, ctrlset,shr1,shr2,shr_pins,csc1,csc2,csc3
-v7_baseline,1,lut6m,10, 0.122,lut5,2,0.1,,,,56,24,1,1,0.15,0.5,0,,,,,,
-v7_baseline_cs,1,lut6m, 20,0.122,lut5,4,0.1,,,,56,24,1,1,0.15,0.5,1,,,,,,
-v7_baseline_ps,1,lut6m,25,0.122,lut5,6,0.1,,,,56,24,1,1,0.15,0.5,0,lut6m,lut5,5,,,
-v7_baseline_ps_cs,1,lut6m,15,0.122,lut5,8,0.1,,,,56,24,1,1,0.15,0.5,1,lut6m,lut5,5,,,

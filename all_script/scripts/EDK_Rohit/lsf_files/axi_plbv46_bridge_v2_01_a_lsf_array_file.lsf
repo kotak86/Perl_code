@@ -1,7 +1,0 @@
-#!/bin/csh 
-#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_plbv46_bridge_v2_01_a_random[1-20]%100
-#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
-#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
-set a = (\
-);
-./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

@@ -1,3 +1,0 @@
-REPORT: lx6835 - timed out at df (1)
-Signal SIGTERM caught... Closing vish.
-Fatal: vsim caught SIGTERM. Closing vsimk kernel.

@@ -1,4 +1,0 @@
-variable $family_force=virtex5,virtex6,virtex6l,virtex7,virtex7l,kintex7,kintex7l,artix7,artix7l,aartix7,zynq,azynq
-variable $family_force=virtex5,virtex6,virtex6l,virtex7,virtex7l,kintex7,kintex7l,zynq,azynq
-variable $family_force=virtex5,virtex6,virtex6l,virtex7,virtex7l,kintex7,kintex7l,artix7,artix7l,aartix7,zynq,azynq
-variable $family_force=virtex5,virtex6,virtex6l,virtex7,virtex7l,kintex7,kintex7l,artix7,artix7l,aartix7,zynq,azynq
