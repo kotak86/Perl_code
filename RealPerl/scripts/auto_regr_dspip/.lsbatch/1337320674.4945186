@@ -1,0 +1,13 @@
+#! /bin/sh
+
+$LSB_TRAPSIGS
+$LSB_RCP1
+$LSB_RCP2
+$LSB_RCP3
+# LSBATCH: User input
+augmentstarter vsim -c -coverage  -t 1ps +notimingchecks -l /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_timer_v1_03_a/spartan6/timer_rand_1_8to15_casc_53282_13/run/axi_timer_func_test_64bit_cap_29419_func.log -f /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_timer_v1_03_a/spartan6/timer_rand_1_8to15_casc_53282_13/run/vsim_extra.cmd +OVM_TESTNAME=axi_timer_func_test_64bit_cap -do /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_timer_v1_03_a/spartan6/timer_rand_1_8to15_casc_53282_13/run/bsub_vsim_29419.do /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_timer_v1_03_a/spartan6/timer_rand_1_8to15_casc_53282_13/run/work.ip_tb  /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_timer_v1_03_a/spartan6/timer_rand_1_8to15_casc_53282_13/run/work.glbl  > /dev/null
+ExitStat=$?
+wait
+# LSBATCH: End user input
+true
+exit `expr $? "|" $ExitStat`

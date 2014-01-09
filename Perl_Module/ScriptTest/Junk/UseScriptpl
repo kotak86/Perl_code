@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+use strict; 
+use warnings; 
+use Data::Dumper; 
+use ManagePerm;
+
+my @parse_dir = @ARGV;
+
+my @files = GetFiles(@parse_dir);
+
+
+

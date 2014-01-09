@@ -1,0 +1,43 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_uartlite_v1_02_a_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_8/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_25/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex7/uartlite_fcs2_66944_11/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6l/uartlite_fcs2_66944_24/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6l/uartlite_fcs2_66944_16/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6l/uartlite_fcs2_66944_15/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6l/uartlite_fcs2_66944_18/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6l/uartlite_fcs2_66944_17/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/zynq/uartlite_fcs1_61949_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/zynq/uartlite_zync_14455_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/zynq/uartlite_zync_14455_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/zynq/uartlite_zync_14455_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_13/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_10/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_23/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_20/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_22/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/artix7/uartlite_a7_94250_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/artix7/uartlite_a7_94250_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/artix7/uartlite_a7_94250_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/qspartan6l/uartlite_fcs1_61949_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/kintex7/uartlite_fcs2_66944_19/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/kintex7/uartlite_fcs2_66944_9/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6/uartlite_fcs2_66944_12/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6/uartlite_fcs2_66944_26/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6/uartlite_fcs2_66944_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/virtex6/uartlite_fcs2_66944_21/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_uartlite_v1_02_a/spartan6/uartlite_fcs1_61949_0/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

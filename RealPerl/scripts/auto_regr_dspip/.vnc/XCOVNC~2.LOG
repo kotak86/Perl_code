@@ -1,0 +1,72 @@
+_XSERVTransSocketOpenCOTSServer: Unable to open socket for inet6
+_XSERVTransOpen: transport open failed for inet6/xcovnc4:3
+_XSERVTransMakeAllCOTSServerListeners: failed to open listener for inet6
+Underlying X server release 60900000, The X.Org Foundation
+
+VNC(R) Server (Virtual-Mode) Enterprise Edition E4.6.3 (r66752) 
+Built on Aug 18 2011 14:31:01
+Copyright (C) 2002-2011 RealVNC Ltd.
+VNC is a registered trademark of RealVNC Ltd. in the U.S. and in other
+countries.
+See http://www.realvnc.com for information on VNC.
+For third party acknowledgements see:
+http://www.realvnc.com/products/enterprise/4.6/acknowledgements.html
+
+Sun May 20 18:37:59 2012
+ vncext:      VNC extension running!
+ PerProcessL: Warning: Ignoring duplicate key in license file.
+ vncext:      created VNC Server for screen 0
+ TcpListener: listening on IPv4, port 5903
+ TcpListener: listening on IPv4, port 5803
+error opening security policy file /usr/X11R6/lib/X11/xserver/SecurityPolicy
+Could not init font path element /usr/X11R6/lib/X11/fonts/misc/, removing from list!
+Could not init font path element /usr/X11R6/lib/X11/fonts/TTF/, removing from list!
+Could not init font path element /usr/X11R6/lib/X11/fonts/Type1/, removing from list!
+Could not init font path element /usr/X11R6/lib/X11/fonts/CID/, removing from list!
+Could not init font path element /usr/X11R6/lib/X11/fonts/75dpi/, removing from list!
+Could not init font path element /usr/X11R6/lib/X11/fonts/100dpi/, removing from list!
+
+Sun May 20 18:38:15 2012
+ PerProcessL: Warning: Ignoring duplicate key in license file.
+ Connections: connected: 172.19.117.202::56165
+ SConnection: Client needs protocol version 4.1
+ SConnection: Client requests security type RA2_128(5)
+ SecurityRA2: Local private key has 2048 bits
+
+Sun May 20 18:38:16 2012
+ SecurityRA2: Remote public key has 2048 bits
+ SecurityRA2: using AES-128
+
+Sun May 20 18:38:23 2012
+ RootCode:    Establishing co-process pipes
+ SConnection: Authentication successful
+ Connections: authenticated: 172.19.117.202::56165, as ankitko (Full access)
+ SConnection: Server default pixel format depth 24 (32 bpp) little-endian
+              rgb888
+ ftExtension: Received advertisement for share 3941235113
+ FTMsgWriter: Requesting '' of share 3941235113 to depth 0
+ ftExtension: Received advertisement for share 3941235114
+ FTMsgWriter: Requesting '' of share 3941235114 to depth 0
+ SConnection: Encodings JRLE(22) CopyRect(1) ZRLE(16) JPEG(21) TRLE(15)
+              Zlib(6) Hextile(5) RRE(2) Raw(0) CursorWithAlpha(-311)
+              Cursor(-239) DesktopSize(-223)
+ SConnection: Current encoding JRLE
+ SConnection: Client pixel format depth 24 (32 bpp) little-endian rgb888
+ ftExtension: Received share EOF
+ DownloadMan: Requested Microsoft XPS Document Writer via VNC from
+              XSJANKITKO30
+
+Sun May 20 18:38:25 2012
+ DownloadMan: Download complete.
+
+Sun May 20 18:38:43 2012
+ Connections: disconnected: 172.19.117.202::56165 (Window closed by user)
+ SMsgWriter:  framebuffer updates 9
+ SMsgWriter:    JRLE rects 10, bytes 101042
+ SMsgWriter:    raw bytes equivalent 7166408, compression ratio 70.93
+X connection to :3.0 broken (explicit kill or server shutdown).
+The application 'serverconfig' lost its connection to the display :3.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+Can't find file /home/ankitko/.vnc/xcovnc4:3.pid
+You'll have to kill the Xvnc process manually

@@ -1,0 +1,66 @@
+#+1336073839
+echo $PATH
+#+1336760127
+etl#+1336073566
+#+1336760147
+echo $0
+#+1336760196
+setenv PATH "$PATH:."
+#+1336760214
+set#+1336760214
+#+1336760350
+setenv PATH "${PATH}:."
+#+1336760369
+336073566
+#+1337560863
+cd Desktop/
+#+1337560883
+ls -ltr
+#+1337669775
+cd /proj/xbuilds/ids_14.2_P.24.0.0
+#+1337669793
+ls -a
+#+1337669841
+find -name ISE
+#+1337670011
+find -name "ISE"
+#+1337670062
+cd ./lin/14.2/ISE_DS/ISE/coregen/ip/xilinx/DSP/
+#+1337670067
+cd ./lin/14.2/ISE_DS/ISE/coregen/ip/xilinx
+#+1337670114
+cd dsp/com/
+#+1337670124
+cd xilinx/
+#+1337670130
+ls -alt
+#+1337670138
+cd ip/
+#+1337670171
+ls -altr v_triple_sdi_*
+#+1337670206
+ls -a v_triple_sdi_*
+#+1337670219
+ls v_triple_sdi_*
+#+1337670415
+vi v_triple
+#+1337713945
+ls -la
+#+1337722942
+touch a
+#+1337722946
+rm a
+#+1337723174
+ls -l
+#+1337877048
+cd
+#+1337878557
+l
+#+1337878559
+ls
+#+1337878565
+ls -altr
+#+1337880589
+pwd
+#+1337880806
+vi ankit

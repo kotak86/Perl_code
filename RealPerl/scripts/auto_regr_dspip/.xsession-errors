@@ -1,0 +1,105 @@
++ DNUM=99
++ DNUM=99
++ logger -i -t XvncPreSession 'DNUM :: 99 wl'
++ logger -i -t XvncPreSession 'Login by ankitko'
++ netstat -lnpt
++ grep ':6099 .*/Xvnc-core'
+++ lsof -ltaU /tmp/.X11-unix/X99
++ XPID='15336
+30046'
+++ id -u ankitko
++ '[' 12696 -eq 0 ']'
++ '[' -s /tmp/load.busy ']'
++ logger -i -t XvncPreSession '1 :: wl'
+++ ps -oppid --no-headers 15336 30046
+/usr/sbin/XvncPreSession: line 61: 1
+ 3925: syntax error in expression (error token is "3925")
++ exit 0
+/etc/gdm/PreSession/Default: Registering your session with utmp
+/etc/gdm/PreSession/Default: running: /usr/bin/sessreg -a -u /var/run/utmp -x "/var/gdm/localhost.localdomain:99.Xservers" -h "localhost.localdomain" -l "localhost.localdomain:99" "ankitko"
+localuser:ankitko being added to access control list
+No profile for user 'ankitko' found
+SESSION_MANAGER=local/xcovnc4:/tmp/.ICE-unix/30255
+vmware-user: could not open /proc/fs/vmblock/dev
+failed to find gam_server
+Passkey agent registration failed: Passkey agent already exists
+Initializing nautilus-open-terminal extension
+failed to find gam_server
+
+** (nm-applet:30384): WARNING **: <WARN>  applet_dbus_manager_start_service(): Could not acquire the NetworkManagerUserSettings service.
+  Message: 'Connection ":1.299" is not allowed to own the service "org.freedesktop.NetworkManagerUserSettings" due to security policies in the configuration file'
+
+Introspect error: A security policy in place prevents this sender from sending this message to this recipient, see message bus configuration file (rejected message had interface "org.freedesktop.DBus.Introspectable" member "Introspect" error name "(unset)" destination "edu.duke.linux.yum")
+Traceback (most recent call last):
+  File "/usr/bin/puplet", line 467, in ?
+    main()
+  File "/usr/bin/puplet", line 464, in main
+    p.run()
+  File "/usr/bin/puplet", line 451, in run
+    self._refreshInfo()
+  File "/usr/bin/puplet", line 191, in _refreshInfo
+    if self.updatesObject is not None and \
+AttributeError: DBusException instance has no attribute '_dbus_error_name'
+Failed to connect to socket /tmp/fam-ankitko-
+
+(gnome-panel:30320): Gtk-WARNING **: Failed to connect to the FAM server
+
+(gnome-panel:30320): Gtk-WARNING **: Not adding file monitor on '/home/ankitko/.recently-used.xbel', failed to connect to FAM server
+
+Failed to connect to socket /tmp/fam-ankitko-
+failed to find gam_server
+Failed to connect to socket /tmp/fam-ankitko-
+failed to find gam_server
+Warning: vmware-user failed to initialize blocking driver.
+
+(vmware-user:30352): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks",
+Warning: Error in the RPC recieve loop: RpcIn: Unable to send
+Warning: Another instance of VMwareUser may be running.
+
+Failed to connect to socket /tmp/fam-ankitko-
+failed to find gam_server
+Failed to connect to socket /tmp/fam-ankitko-
+failed to find gam_server
+Failed to connect to socket /tmp/fam-ankitko-
+failed to find gam_server
+Failed to connect to socket /tmp/fam-ankitko-
+failed to find gam_server
+failed to find gam_server
+Failed to connect to socket /tmp/fam-ankitko-
+Failed to connect to socket /tmp/fam-ankitko-
+
+** (gnome-panel:30320): WARNING **: Failed to connect to the FAM server: Connection failure
+failed to find gam_server
+Failed to connect to socket /tmp/fam-ankitko-
+Window manager warning: Lost connection to the display 'localhost.localdomain:99.0';
+most likely the X server was shut down or you killed/destroyed
+the window manager.
+The application 'gnome-session' lost its connection to the display localhost.localdomain:99.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+The application 'nautilus' lost its connection to the display localhost.localdomain:99.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+The application 'Gecko' lost its connection to the display localhost.localdomain:99.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+The application 'gnome-panel' lost its connection to the display localhost.localdomain:99.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+The application 'pam-panel-icon' lost its connection to the display localhost.localdomain:99.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+The application 'eggcups' lost its connection to the display localhost.localdomain:99.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+The application 'bt-applet' lost its connection to the display localhost.localdomain:99.0;
+most likely the X server was shut down or you killed/destroyed
+the application.
+
+(gnome-panel:30320): GLib-GObject-CRITICAL **: g_object_run_dispose: assertion `G_IS_OBJECT (object)' failed
+
+(gnome-panel:30320): GLib-GObject-CRITICAL **: g_object_run_dispose: assertion `G_IS_OBJECT (object)' failed
+
+(gnome-panel:30320): GLib-GObject-CRITICAL **: g_object_run_dispose: assertion `G_IS_OBJECT (object)' failed
+
+(gnome-panel:30320): GLib-GObject-CRITICAL **: g_object_run_dispose: assertion `G_IS_OBJECT (object)' failed

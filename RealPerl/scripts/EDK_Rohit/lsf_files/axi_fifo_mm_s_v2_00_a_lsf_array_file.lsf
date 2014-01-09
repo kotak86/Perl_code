@@ -1,0 +1,32 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_fifo_mm_s_v2_00_a_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex7/axi_fifo_mm_s_rx53812_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex7/axi_fifo_mm_s_tx_err95400_10/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex7/axi_fifo_mm_s_rx53812_9/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex7/axi_fifo_mm_s_tx_err95400_8/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/artix7/axi_fifo_mm_s_tx_err95400_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/artix7/axi_fifo_mm_s_tx_err95400_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/artix7/axi_fifo_mm_s_tx_err95400_9/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/artix7/axi_fifo_mm_s_tx_err95400_14/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/kintex7/axi_fifo_mm_s_tx_err95400_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/kintex7/axi_fifo_mm_s_tx_err95400_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/kintex7/axi_fifo_mm_s_tx_err95400_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/kintex7/axi_fifo_mm_s_tx_err95400_11/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/kintex7/axi_fifo_mm_s_tx_err95400_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_rx53812_8/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_tx_err95400_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_tx_err95400_12/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_rx53812_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_tx_err95400_13/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_rx53812_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_rx53812_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/virtex6/axi_fifo_mm_s_rx53812_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/spartan6/axi_fifo_mm_s_rx53812_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/spartan6/axi_fifo_mm_s_rx53812_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/spartan6/axi_fifo_mm_s_rx53812_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_fifo_mm_s_v2_00_a/spartan6/axi_fifo_mm_s_tx_err95400_6/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

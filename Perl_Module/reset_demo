@@ -1,0 +1,4 @@
+chmod 766 find_uid.pl GetFiles.pl  GetOpt.pl testModule.pl reset_test
+chmod 766 ScriptTest/*pl ScriptTest/*pm
+chmod 762 ScriptTest/Junk/*pl ScriptTest/Junk/*pm
+chmod 777 ScriptTest/UnitTest/*pl

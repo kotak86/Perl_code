@@ -1,0 +1,34 @@
+#!/bin/csh 
+#BSUB -P ip_ipv_regressions -Lp ips_ipv_grp -R "select[type==X86_64 && os==lin]" -R "rusage[mem=3000]" -J axi_can_v1_03_a_random[1-20]%100
+#BSUB -eo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.err
+#BSUB -oo /proj/xtools/testRunner/logs/ankitko/%J_%I_xlnxIP.txt
+set a = (\
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/virtex7/can_focused_32323_21/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qspartan6/can_focused_32323_20/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/virtex6l/can_focused_32323_9/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/zynq/can_focused_32323_13/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qvirtex6/can_focused_32323_15/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qvirtex6/can_focused_32323_19/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qvirtex6/can_focused_32323_26/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/artix7/can_focused_32323_4/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/artix7/can_focused_32323_14/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/artix7/can_focused_32323_0/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/artix7/can_focused_32323_1/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/artix7/can_focused_32323_8/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qspartan6l/can_focused_32323_11/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qspartan6l/can_focused_32323_17/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qspartan6l/can_focused_32323_24/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/qspartan6l/can_focused_32323_25/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/aspartan6/can_focused_32323_16/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/aspartan6/can_focused_32323_3/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/virtex6/can_focused_32323_2/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/virtex6/can_focused_32323_7/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/virtex6/can_focused_32323_22/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/virtex6/can_focused_32323_10/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/virtex6/can_focused_32323_5/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/spartan6/can_focused_32323_23/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/spartan6/can_focused_32323_6/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/spartan6l/can_focused_32323_18/input \
+/proj/xtcRepo/ipv/epdIP/14.2_0516/FOCUS/_TCASE/edkIP/axi_can_v1_03_a/spartan6l/can_focused_32323_12/input \
+);
+./lsf_wrapper_lin.csh $a[$LSB_JOBINDEX]

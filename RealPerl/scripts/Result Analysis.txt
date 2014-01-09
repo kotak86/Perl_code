@@ -1,0 +1,3 @@
+Alert
+
+	Place DRC : This design requires more IBUF cells than what is available in the target device. 

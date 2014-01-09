@@ -1,0 +1,27 @@
+<buildComparison>
+  <current_dataset>
+    <build>14.3_0813</build>
+    <flows>COREGENIP</flows>
+    <flows>EDKIP</flows>
+  </current_dataset>
+  <error_handling>
+    <sub>s/^ERROR.*\]//</sub>
+    <sub>s/^Slack (VIOLATED)//</sub>
+    <sub>s/^String \"Exit Code: 0\"/</sub>
+  </error_handling>
+  <matches>
+    <match>error</match>
+    <match>tcname</match>
+  </matches>
+  <path>/proj/XCOtcRepo/ipv/automation/scripts/auto_annotation</path>
+  <ref_dataset>
+    <build>14.3_0812</build>
+    <flows>COREGENIP</flows>
+    <flows>EDKIP</flows>
+  </ref_dataset>
+  <updates>
+    <update>status</update>
+    <update>notes</update>
+    <update>cr</update>
+  </updates>
+</buildComparison>

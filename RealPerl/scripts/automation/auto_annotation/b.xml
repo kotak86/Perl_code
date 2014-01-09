@@ -1,0 +1,17 @@
+<outer1>
+    <inner1>
+        <name>Stonecold</name>
+        <profession>warrior</profession>
+        <org>wwf</org>
+    </inner1>
+    <inner1>
+        <name>Shanebond</name>
+        <profession>Bowler</profession>
+        <org>newzealand</org>
+    </inner1>
+    <inner1>
+        <name>brain schemidit</name>
+        <profession>Chairman</profession>
+        <org>Google</org>
+    </inner1>
+</outer1>

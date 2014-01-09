@@ -1,0 +1,13 @@
+#! /bin/sh
+
+$LSB_TRAPSIGS
+$LSB_RCP1
+$LSB_RCP2
+$LSB_RCP3
+# LSBATCH: User input
+augmentstarter /proj/xtools/svauto2/flows/xlnxIP/prod/newSpool.pl -rd /proj/xresults/arizona/ankitko/edkIP/14.2_0517/lin64/axi_uartlite_v1_02_a/qvirtex6/uartlite_fcs2_66944_14/run -SIM_VENDOR MTI -SIMULATION functional -FLW_TYPE edkIP -NCDFLAG 0 -CADMAN_xilinx 14.2_0517 -CADMAN_xilinx_pathtype tda -testcasename uartlite_fcs2_66944_14 -FAMILY qvirtex6 -DEBUG_MODE 0 
+ExitStat=$?
+wait
+# LSBATCH: End user input
+true
+exit `expr $? "|" $ExitStat`

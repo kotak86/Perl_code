@@ -1,0 +1,9 @@
+TERM environment variable not set.
+ids_14.3_P.34.0.0 found.
+ids_14.3_P.34.0.0 directory & ta-info.txt found for build at 10:21:01.
+/proj/ipco/users/hshah/ankit/scripts/edkdsp_auto/w_create_lsf_epd.pl lin axi_apb_bridge_v1_01_a DEFAULT_FAMILY FOCUS mti XCO hrz ids_14.3_P.34.0.0
+/proj/ipco/users/hshah/ankit/scripts/edkdsp_auto/w_create_lsf_epd.pl lin axi_dma_v6_01_a DEFAULT_FAMILY FOCUS mti XCO hrz ids_14.3_P.34.0.0
+lsf files created at : /proj/ipco/users/hshah/ankit/lsf/ankitko_lsf/ids_14.3_P.34.0.0_rodin 
+sh: line 0: cd: /proj/ipco/users/hshah/ankit/lsf/ankitko_lsf/ids_14.3_P.34.0.0_rodin/: No such file or directory
+sh: /proj/ipco/users/hshah/ankit/lsf/ankitko_lsf/ids_14.3_P.34.0.0_rodin/linfiles: No such file or directory
+No such file or directory at /proj/ipco/users/hshah/ankit/scripts/edkdsp_auto/build_sub.pl line 87.

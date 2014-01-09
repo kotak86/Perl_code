@@ -1,0 +1,10 @@
+REPORT: xcovwes15 - timed out at checkReadDirs /home/ats (0)
+999999 LSFUSER= ankitko 
+"my" variable $tclfile masks earlier declaration in same scope at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 2494.
+"my" variable $tclfile masks earlier declaration in same scope at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 4357.
+"my" variable $testcase masks earlier declaration in same scope at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 7348.
+Unrecognized escape \s passed through at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 7976.
+Unrecognized escape \s passed through at /proj/xtools/svauto2/flows/xlnxIP/prod/xlnxIP.pm line 7977.
+Use of uninitialized value in pattern match (m//) at /proj/xtools/svauto2/libs/General/v1_7.pm line 267.
+Use of uninitialized value in pattern match (m//) at /proj/xtools/svauto2/libs/General/v1_7.pm line 267.
+User defined signal 2

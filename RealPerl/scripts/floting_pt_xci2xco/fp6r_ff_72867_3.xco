@@ -1,0 +1,37 @@
+#Rule:--FAMILY eq 'artix7l'--
+SELECT Floating-point DEFAULT_FAMILY Xilinx,_Inc. 6.0
+CSET component_name = fp6r_ff_72867_3
+CSET has_b_tlast = false
+CSET operation_tuser_width = 26
+CSET c_a_exponent_width = 6
+CSET c_optimization = speed_optimized
+CSET maximum_latency = true
+CSET has_result_tready = false
+CSET a_tuser_width = 11
+CSET add_sub_value = both
+CSET c_compare_operation = programmable
+CSET result_tlast_behv = Pass_A_TLAST
+CSET result_precision_type = double
+CSET operation_type = float_to_float
+CSET c_rate = 1
+CSET has_operation_tuser = false
+CSET c_has_underflow = false
+CSET axi_optimize_goal = resources
+CSET has_operation_tlast = false
+CSET a_precision_type = custom
+CSET c_result_fraction_width = 53
+CSET c_mult_usage = no_usage
+CSET has_a_tuser = false
+CSET has_a_tlast = true
+CSET c_result_exponent_width = 11
+CSET b_tuser_width = 13
+CSET c_has_overflow = false
+CSET has_aresetn = true
+CSET has_aclken = false
+CSET c_has_invalid_op = false
+CSET c_latency = 2
+CSET c_a_fraction_width = 11
+CSET flow_control = blocking
+CSET c_has_divide_by_zero = false
+CSET has_b_tuser = false
+GENERATE

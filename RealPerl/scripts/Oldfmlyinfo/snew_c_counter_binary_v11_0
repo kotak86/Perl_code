@@ -1,0 +1,1 @@
+variable $family_force = virtex6,virtex7,virtex7l,kintex7,artix7,artix7l,aartix7,zynq,azynq,artix7,artix7l,aartix7,zynq,azynq,kintex7l, spartan6,spartan6l,aspartan6, virtex6l

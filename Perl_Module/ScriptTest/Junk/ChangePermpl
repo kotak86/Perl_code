@@ -1,0 +1,42 @@
+#!/usr/bin/perl 
+use strict; 
+use warnings; 
+use Data::Dumper; 
+use File::stat; 
+use File::Find; 
+
+my @files; 
+my $cnt = 0; 
+my $path = "C:\\Users\\u311529\\Desktop\\Scripts\\TestScripts"; 
+
+find( 
+	sub { 
+		(-f ) or return; 
+		push @files, $File::Find::name; 
+	}, $path); 
+
+sub GetInfo { 
+	foreach my $file (@files) { 
+		my $flag = 0; 
+		my $get_info = stat($file); 
+		my $perm = $get_info->mode; 
+		my $permission = $perm & 0777; 
+		my $oct_perm_str = sprintf "%o", $permission; 
+		my @other = split//, $oct_perm_str; 
+		
+		if ($other[2] == 7 or $other[2] == 2 or $other[2] == 3 or $other[2] == 6){ 
+			print "$file permission is $oct_perm_str & is world writable\n"; $flag = 1; 
+		} 
+		
+		if ($flag == 1){ $other[2] = $other[2] - 2; 
+			my $mode = "0$other[0]".$other[1].$other[2] ; 
+			print "We are Changing file permission to $mode from $oct_perm_str \n"; 
+			chmod oct($mode), $file; 
+		} 
+	} 
+} 
+		
+		
+		
+		
+GetInfo(@files);
